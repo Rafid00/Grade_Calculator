@@ -1,0 +1,235 @@
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+}
+
+html {
+   font-size: 62.5%;
+}
+
+body {
+   margin: 0 0 50px 0;
+   font-family: "Open Sans", sans-serif;
+   overflow-x: hidden;
+}
+
+input,
+textarea,
+button {
+   font-family: inherit;
+}
+
+/* BAR START */
+
+.section-container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.title {
+   font-size: 3.2rem;
+   font-family: "Montserrat", sans-serif;
+   font-weight: 600;
+}
+
+.sort-by label {
+   display: block;
+   text-align: center;
+}
+
+#sort-by {
+   background-color: #e0e0e0;
+   border: none;
+   outline: none;
+   width: 120px;
+   height: 30px;
+   border-radius: 7px;
+   margin-top: 4px;
+   padding: 0 10px;
+}
+
+.btn {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: #9397ef;
+   color: white;
+   padding: 0.2rem 1.6rem;
+   gap: 7px;
+   border-radius: 1px;
+   cursor: pointer;
+}
+
+.add-course-img img,
+.move-retake-btn img,
+.edit-btn img,
+.delete-btn img {
+   width: 35px;
+   cursor: pointer;
+}
+
+.bar {
+   display: flex;
+   font-size: 1.6rem;
+   font-weight: 600;
+   box-shadow: 0px 1px 4px 2px rgba(0, 0, 0, 0.25);
+   padding: 1.6rem 3rem;
+   width: 93vw;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.view-chart-btn {
+   width: 162.65px;
+}
+
+.bar {
+   position: relative;
+}
+
+.grading-sys {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   margin: 0;
+}
+
+/* BAR END */
+
+/* COURSE-LIST START*/
+
+.course-list {
+   font-size: 1.6rem;
+   font-weight: 600;
+}
+
+.course-info {
+   display: flex;
+   align-items: center;
+   gap: 80px;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   margin: 0;
+}
+
+.edit-delete-btn {
+   display: flex;
+   gap: 12px;
+}
+
+.course-item {
+   display: flex;
+   justify-content: space-between;
+   box-shadow: 0px 1px 4px 2px rgba(0, 0, 0, 0.25);
+   height: 80px;
+   padding: 0 3rem;
+   align-items: center;
+   position: relative;
+}
+
+.course-list {
+   display: grid;
+   grid-template-columns: 1fr;
+   gap: 20px;
+   box-shadow: 0px 1px 4px 2px rgba(0, 0, 0, 0.25);
+   padding: 2.5rem 3rem;
+   width: 93vw;
+   justify-content: center;
+   align-items: center;
+   margin: 30px 0;
+}
+
+#grade-selection {
+   background-color: #e0e0e0;
+   border: none;
+   outline: none;
+   width: 60px;
+   height: 30px;
+   border-radius: 7px;
+   padding: 0 10px;
+}
+
+/* ADDING ANIMATION */
+
+.title {
+   animation: fadeIn 2s both;
+}
+
+@keyframes fadeIn {
+   0% {
+      opacity: 0%;
+   }
+
+   100% {
+      opacity: 100%;
+   }
+}
+
+.intro-bar {
+   animation: slideIn 1s both;
+}
+
+@keyframes slideIn {
+   0% {
+      transform: translateX(700px);
+      opacity: 0%;
+   }
+
+   100% {
+      transform: translateX(0);
+      opacity: 100%;
+   }
+}
+
+.course-list {
+   animation: slideIn-2 1.5s both;
+}
+
+@keyframes slideIn-2 {
+   0% {
+      transform: translateX(700px);
+      opacity: 0%;
+   }
+
+   100% {
+      transform: translateX(0);
+      opacity: 100%;
+   }
+}
+
+.end-bar {
+   animation: slideIn-3 2s both;
+}
+
+@keyframes slideIn-3 {
+   0% {
+      transform: translateX(700px);
+      opacity: 0%;
+   }
+
+   100% {
+      transform: translateX(0);
+      opacity: 100%;
+   }
+}
+
+.move-retake-btn img:hover,
+.edit-btn img:hover,
+.delete-btn img:hover {
+   animation: hover-effect 150ms both;
+}
+
+@keyframes hover-effect {
+   0% {
+      transform: scale(1);
+   }
+
+   100% {
+      transform: scale(1.1);
+   }
+}

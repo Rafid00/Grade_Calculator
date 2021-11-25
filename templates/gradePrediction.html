@@ -1,0 +1,117 @@
+{% extends "base.html" %} {% block title %}MyGradeCalc - Grade Prediction{% endblock %} {% block style %}<link
+   rel="stylesheet"
+   href="{{ url_for('static', filename='gradePrediction.css') }}"
+/>{% endblock %} {% block content %}
+<section>
+   <div class="section-container">
+      <div class="title"><p>GRADE PREDICTION</p></div>
+      <div class="intro-bar bar">
+         <div class="sort-by">
+            <label for="sort-by">Sort By</label>
+            <select name="sort-by" id="sort-by">
+               <option></option>
+               <option>Ascending</option>
+               <option>Descending</option>
+            </select>
+         </div>
+         <div class="grading-sys">Grading System : North South University</div>
+         <div class="add-course-btn btn">
+            <div class="add-course-img"><img src="{{ url_for('static', filename='images/addicon.svg') }}" alt="" /></div>
+            <div class="add-course-title"><p>Add Course</p></div>
+         </div>
+      </div>
+      <div class="course-list">
+         {% for course in courseDetails %}
+
+         <!-- <div class="course-item">
+            <div class="move-retake-btn">
+               <img src="{{ url_for('static', filename='images/move.svg') }}" alt="" title="Move to 'Retake Output'" />
+            </div>
+            <div class="course-info">
+               <div class="course-init">Course Init : <span class="text-value">{{course[1]}}</span></div>
+               <div class="grade">Grade : <span class="text-value">{{course[2]}}</span></div>
+               <div class="grade-point">Grade Point : <span class="text-value">{{course[3]|float}}</span></div>
+               <div class="credit">Credit : <span class="text-value">{{course[4]}}</span></div>
+            </div>
+            <div class="edit-delete-btn">
+               <div class="edit-btn"><img src="{{ url_for('static', filename='images/edit.svg') }}" alt="" title="Edit" /></div>
+               <div class="delete-btn"><img src="{{ url_for('static', filename='images/delete.svg') }}" alt="" title="Delete" /></div>
+            </div>
+         </div> -->
+
+         <div class="course-item">
+            <div class="move-retake-btn">
+               <img src="{{ url_for('static', filename='images/move.svg') }}" alt="" title="Move to 'Retake Output'" />
+            </div>
+            <div class="course-info">
+               <div class="course-init">Course Init : <span class="text-value">{{course[1]}}</span></div>
+               <div class="grade">
+                  Grade :
+                  <select name="grade-selection" id="grade-selection">
+                     <option value="1"><span class="text-value">{{course[2]}}</span></option>
+                     <option value="A+">A+</option>
+                     <option value="A">A</option>
+                     <option value="A-">A-</option>
+                     <option value="B+">B+</option>
+                     <option value="B">B</option>
+                     <option value="B-">B-</option>
+                     <option value="C+">C+</option>
+                     <option value="C">C</option>
+                     <option value="C-">C-</option>
+                     <option value="D+">D+</option>
+                     <option value="D">D</option>
+                     <option value="F">F</option>
+                  </select>
+               </div>
+               <div class="grade-point">Grade Point : <span class="text-value">{{course[3]|float}}</span></div>
+               <div class="credit">Credit : <span class="text-value">{{course[4]}}</span></div>
+            </div>
+            <div class="edit-delete-btn">
+               <div class="edit-btn"><img src="{{ url_for('static', filename='images/edit.svg') }}" alt="" title="Edit" /></div>
+               <div class="delete-btn"><img src="{{ url_for('static', filename='images/delete.svg') }}" alt="" title="Delete" /></div>
+            </div>
+         </div>
+         {% endfor %}
+      </div>
+      <div class="end-bar bar">
+         <div class="gpa"><p>New Grade Point Average : <span class="value">{{new_cgpa}}</p></div>
+         <div class="credit-passed"><p>Credit Passed : <span class="value">{{creditPassed}}</p></p></div>
+         <div class="prev-gpa">
+            <p>Previous Grade Point Average : <span class="value">{{prev_cgpa}}</p></p>
+         </div>
+      </div>
+   </div>
+</section>
+<!-- add course  -->
+<div class="dark-bg"></div>
+<div class="add-course-pop">
+   <form class="add-course-pop-form">
+      <div class="login-container">
+         <div class="title-pop">
+            <p>Add Course Panel</p>
+         </div>
+         <div class="form-inputs">
+            <div class="input-col">
+               <label for="course-init">Course Init</label> <input type="text" id="course-init" name="course-init" required />
+            </div>
+            <div class="input-col">
+               <label for="grade">Grade / Grade Point</label>
+               <input type="text" id="grade" name="grade" title="Optional if 'Total Marks' is provided" />
+            </div>
+            <div class="input-col">
+               <label for="total-marks">Total Marks</label>
+               <input type="text" id="total-marks" name="total-marks" title="Optional if 'Grade' is provided" />
+            </div>
+            <div class="input-col"><label for="credit">Credit</label> <input type="text" id="credit" name="credit" required /></div>
+         </div>
+         <div class="submit-btn">
+            <button>Add Course</button>
+         </div>
+         <div class="close-btn"><img src="{{ url_for('static', filename='images/close.png') }}" alt="" /></div>
+      </div>
+   </form>
+</div>
+{% endblock %} {% block js %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="{{ url_for('static', filename='gradePrediction.js') }}"></script>
+{% endblock %}

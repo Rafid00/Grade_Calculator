@@ -1,0 +1,166 @@
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+}
+
+html {
+   font-size: 62.5%;
+}
+
+body {
+   margin: 0;
+   font-family: "Open Sans", sans-serif;
+   overflow-x: hidden;
+}
+
+input,
+textarea,
+button {
+   font-family: inherit;
+}
+
+/* NAVBAR START */
+
+.nav-container {
+   font-size: 1.8rem;
+   display: flex;
+   background-color: #9397ef;
+   justify-content: space-between;
+   align-items: center;
+   padding: 1rem 7rem;
+   position: relative;
+}
+
+.left ul li:not(:first-child) {
+   margin-left: 35px;
+}
+
+.right img {
+   width: 50px;
+   cursor: pointer;
+}
+
+.left ul {
+   font-family: "Montserrat", sans-serif;
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+}
+
+.left ul a {
+   color: white;
+   text-decoration: none;
+   font-weight: 400;
+}
+
+.left ul li {
+   display: inline-block;
+}
+
+.right-ul-default {
+   font-family: "Montserrat", sans-serif;
+   display: none;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap: 15px;
+   font-size: 1.8rem;
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   color: white;
+   background-color: #9397ef;
+   width: 200px;
+   height: 120px;
+   border-radius: 0 0 1px 1px;
+   position: absolute;
+   right: 0;
+   margin-right: 70px;
+   border-top: 6px solid #2682ff;
+   animation: fadeIn 0.2s both;
+   z-index: 999;
+}
+
+@keyframes fadeIn {
+   0% {
+      opacity: 0%;
+      transform: scale(0.5) translateX(30%) translateY(-35%);
+   }
+   100% {
+      opacity: 100%;
+      transform: scale(1);
+   }
+}
+
+@keyframes fadeOut {
+   0% {
+      opacity: 100%;
+      transform: scale(1);
+   }
+   100% {
+      opacity: 0%;
+      transform: scale(0.5) translateX(30%) translateY(-35%);
+   }
+}
+
+.right-ul-default a {
+   color: inherit;
+   text-decoration: none;
+}
+
+.line {
+   background-image: linear-gradient(to right, #6b70ed, #2682ff);
+   height: 6px;
+   position: absolute;
+   z-index: 999;
+   bottom: 0;
+}
+
+@keyframes fadeIn-2 {
+   0% {
+      transform: scale(0);
+   }
+   100% {
+      transform: scale(1);
+   }
+}
+
+.right img:hover {
+   animation: drop-shadow .1s both;
+}
+
+@keyframes drop-shadow {
+   0% {
+      filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.25));
+   }
+   100% {
+      filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.25));
+   }
+}
+
+/* NAVBAR END */
+
+/* EXTRAS */
+
+input {
+   font-family: "Open Sans", sans-serif;
+   font-size: 1.6rem;
+}
+
+input[type="password"] {
+   letter-spacing: 2px;
+   font-size: 3rem;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+#university_name:focus {
+   box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.25);
+}
+
+select {
+   font-family: "Open Sans", sans-serif;
+   font-size: 1.6rem;
+   font-weight: 500;
+}

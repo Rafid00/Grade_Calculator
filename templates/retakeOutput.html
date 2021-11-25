@@ -1,0 +1,86 @@
+{% extends "base.html" %} {% block title %}MyGradeCalc - Retake Output{% endblock %} {% block style %}<link
+   rel="stylesheet"
+   href="{{ url_for('static', filename='retakeOutput.css') }}"
+/>{% endblock %} {% block content %}
+<section>
+   <div class="section-container">
+      <div class="title"><p>Retake Output</p></div>
+      <div class="intro-bar bar">
+         <div class="sort-by">
+            <label for="sort-by">Sort By</label>
+            <select name="sort-by" id="sort-by">
+               <option></option>
+               <option>Ascending</option>
+               <option>Descending</option>
+            </select>
+         </div>
+         <div class="grading-sys">Grading System : North South University</div>
+         <div class="add-course-btn btn">
+            <div class="add-course-img"><img src="{{ url_for('static', filename='images/idea.svg') }}" alt="" /></div>
+            <div class="add-course-title"><p>Retake Suggestion</p></div>
+         </div>
+      </div>
+      <div class="course-list">
+         {% for course in courseDetails %}
+
+         <div class="course-item">
+            <div class="move-retake-btn">
+               <img src="{{ url_for('static', filename='images/move-d.svg') }}" alt="" title="Move to 'Retake Output'" />
+            </div>
+            <div class="course-info">
+               <div class="course-init">Course Init : <span class="text-value">{{course[1]}}</span></div>
+               <div class="grade">
+                  Grade :
+                  <select name="grade-selection" id="grade-selection">
+                     <option value="1"><span class="text-value">{{course[2]}}</span></option>
+                     <option value="A+">A+</option>
+                     <option value="A">A</option>
+                     <option value="A-">A-</option>
+                     <option value="B+">B+</option>
+                     <option value="B">B</option>
+                     <option value="B-">B-</option>
+                     <option value="C+">C+</option>
+                     <option value="C">C</option>
+                     <option value="C-">C-</option>
+                     <option value="D+">D+</option>
+                     <option value="D">D</option>
+                     <option value="F">F</option>
+                  </select>
+               </div>
+               <div class="grade-point">Grade Point : <span class="text-value">{{course[3]|float}}</span></div>
+               <div class="credit">Credit : <span class="text-value">{{course[4]}}</span></div>
+            </div>
+            <div class="edit-delete-btn">
+               <div class="delete-btn"><img src="{{ url_for('static', filename='images/delete.svg') }}" alt="" title="Delete" /></div>
+            </div>
+         </div>
+
+
+         <!-- <div class="course-item">
+            <div class="move-retake-btn">
+               <img src="{{ url_for('static', filename='images/move-d.svg') }}" alt="" title="Move to 'Retake Output'" />
+            </div>
+            <div class="course-info">
+               <div class="course-init">Course Init : <span class="text-value">{{course[1]}}</span></div>
+               <div class="grade">Grade : <span class="text-value">{{course[2]}}</span></div>
+               <div class="grade-point">Grade Point : <span class="text-value">{{course[3]|float}}</span></div>
+               <div class="credit">Credit : <span class="text-value">{{course[4]}}</span></div>
+            </div>
+            <div class="edit-delete-btn">
+               <div class="edit-btn"><img src="{{ url_for('static', filename='images/edit.svg') }}" alt="" title="Edit" /></div>
+               <div class="delete-btn"><img src="{{ url_for('static', filename='images/delete.svg') }}" alt="" title="Delete" /></div>
+            </div>
+         </div> -->
+
+         {% endfor %}
+      </div>
+      <div class="end-bar bar">
+         <div class="gpa"><p>New Grade Point Average : 3.7</p></div>
+         <div class="credit-passed"><p>Previous Grade Point Average : 3.5</p></div>
+      </div>
+   </div>
+</section>
+{% endblock %} {% block js %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="{{ url_for('static', filename='retakeOutput.js') }}"></script>
+{% endblock %}

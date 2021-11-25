@@ -1,0 +1,181 @@
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+}
+
+html {
+   font-size: 62.5%;
+}
+
+body {
+   margin: 0;
+   font-family: "Open Sans", sans-serif;
+   overflow-x: hidden;
+}
+
+input,
+textarea,
+button {
+   font-family: inherit;
+}
+
+/* LOGIN START */
+
+.login-container {
+   box-shadow: 0px 1px 4px 2px rgba(0, 0, 0, 0.25);
+   width: 450px;
+   height: 600px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.login-container label {
+   font-size: 1.6rem;
+   display: block;
+   margin-bottom: 15px;
+}
+
+.form-inputs input {
+   border: none;
+   outline: none;
+   height: 40px;
+   width: 350px;
+   min-width: 250px;
+   box-shadow: 0px 1px 4px 2px rgba(0, 0, 0, 0.25);
+   padding: 0 15px 0 15px;
+}
+
+.login-container input {
+   margin-bottom: 35px;
+}
+
+.login-container .title {
+   font-size: 2.8rem;
+}
+
+.keep-logged-in {
+   width: 350px;
+}
+
+.login-container input[name="keep-logged-in"] {
+   border: none;
+   outline: none;
+   width: 20px;
+   height: 20px;
+   margin-left: 0;
+   margin-top: 0;
+   margin-right: 6px;
+}
+
+label[for="keep-logged-in"] {
+   display: inline-block;
+   vertical-align: top;
+}
+
+.submit-btn button {
+   border: none;
+   outline: none;
+   width: 350px;
+   background-color: #9397ef;
+   color: white;
+   cursor: pointer;
+   height: 40px;
+   border-radius: 5px;
+   font-size: 1.4rem;
+   font-weight: 500;
+   margin-bottom: 35px;
+}
+
+.call-reg {
+   width: 350px;
+   font-size: 1.4rem;
+}
+
+.call-register {
+   font-weight: 700;
+   color: #0038ff;
+   cursor: pointer;
+}
+
+.call-reg p {
+   margin: 0;
+}
+
+.call-register:hover {
+   border-bottom: 1px solid #0038ff;
+}
+
+.section {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 91vh;
+   gap: 60px;
+}
+
+/* REGISTRATION FORM */
+
+.registration-container {
+   box-shadow: 0px 1px 4px 2px rgba(0, 0, 0, 0.25);
+   width: 800px;
+   height: 600px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.registration-container input {
+   margin-bottom: 20px;
+}
+
+.registration-container input:last-child {
+   margin-bottom: 30px;
+}
+
+.registration-container label {
+   margin-bottom: 5px;
+}
+
+.registration-container .submit-btn button {
+   margin-bottom: 0;
+}
+
+.registration-container .title p {
+   margin: 20px 0;
+}
+
+.form-container-2 {
+   display: none;
+}
+
+@keyframes slideIn {
+   0% {
+      transform: translateX(500px);
+      opacity: 50%;
+   }
+
+   100% {
+      transform: translateX(0);
+      opacity: 100%;
+   }
+}
+
+.form-container-2 {
+   animation: slideIn-3 1s both;
+}
+
+@keyframes slideIn-3 {
+   0% {
+      transform: translateX(400px);
+      opacity: 50%;
+   }
+
+   100% {
+      transform: translateX(0);
+      opacity: 100%;
+   }
+}
